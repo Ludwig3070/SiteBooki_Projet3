@@ -1,0 +1,591 @@
+/* -----------General-------------- */
+* {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box; /* sinon les padding agrandissent les blocks */
+  margin-block: 0; /* sinon les <p> sont decalés */
+}
+
+:root {
+  --main-color: #0065fc;
+  --main-bg-color: #f2f2f2;
+  --filter-bg-color: #deebff;
+  --black: #000000;
+  --grey-tint-2: #d9d9d9;
+}
+
+.fa-solid {
+  /* donne la couleur aux icones */
+  color: var(--main-color);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-size: 16px; /* pour pouvoir utiliser les rem */
+  margin: 0; /*ajout*/
+  padding: 0; /*ajout*/
+}
+
+/****** Header ******/ /*ajout*/
+header {
+  display: flex;
+  height: 4.938rem;
+  justify-content: space-between;
+  margin-bottom: 1.88rem;
+}
+.header-img {
+  padding: 1.88rem 3.13rem 1.88rem 0; /*l image s'est retrecit nickel */
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 4.25rem;
+}
+
+.header-active:hover {
+  /*decoration du lien actif*/
+  color: var(--main-color);
+  position: relative;
+}
+.header-active::after {
+  /* barre sur le lien actif*/
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.875rem;
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--main-color);
+}
+
+/**** fin ajout****/
+
+.main-container {
+  width: 100%;
+  max-width: 90rem;
+  padding: 0 3.125rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* ****** info_group *******/ /**Ajout**/
+
+.info_group-title {
+  margin: 0;
+  margin-top: 0.5rem;
+}
+/*****search bar*****/ /*ajout*/
+.search_bar {
+  min-width: 45%;
+  width: 70%;
+  margin: 2.19rem 0;
+  
+}
+.search_bar_form {
+  height: 3.06rem;
+  width: 50%;  
+  display: flex; /* si tu fais pas ça les deux input ne sont pas bien alignés */
+}
+.search_bar_form .search {
+  height: 100%; /* permet de prendre 100% du conteneur */
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid var(--main-bg-color); /* pour respecter le cahier des charges */
+  border-top: 1px solid var(--main-bg-color); /* idem */
+  margin: 0;
+  padding: 0 1.5rem;
+  flex-grow: 1;
+}
+.search_bar_form::before {
+  content: "";
+  display: block;
+  min-width: 3.125rem;
+  background-image: url(../images/assets/group15.svg); /* j avais pas mis le ../ pour remonter d'un etage*/
+  border-radius: 0.9375rem 0 0 0.9275rem;
+}
+.search_bar_form .submit {
+  height: 100%;
+  background-color: var(--main-color);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--main-bg-color);
+  border-radius: 0rem 0.9375rem 0.9375rem 0rem;
+  border: 1px solid var(--main-color); /* si tu mets pas cette bordure c pas beau */
+  margin: 0;
+  padding: 0 1rem;
+}
+/*fin ajout*/
+
+/* ******filter_bar***** */ /* *Ajout* */
+.filter_bar {
+  display: flex;
+  column-gap: 0.94rem;
+  margin: 2.19rem 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+  align-items: center;
+}
+.btn_content {
+  display: flex;
+  column-gap: 0.94rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  height: 3.13rem;
+}
+.button {
+  display: flex;
+  font-weight: 700;
+  height: 100%;
+  width: 10.8125rem; /* largeur des boutons */
+  font-size: 1.0625rem;
+  text-transform: capitalize;
+  justify-content: center;
+  border-radius: 1.5625rem;
+  border-radius: 1.5625rem;
+  border: 2px solid var(--grey-tint-2);
+  align-items: center;
+  column-gap: 0.625rem;
+  background-color: white;
+}
+.button:hover {
+  background-color: var(--filter-bg-color);
+}
+
+/* *********info_bar************/
+.info_bar {
+  display: flex;
+  column-gap: 0.62rem;
+  align-items: center;
+} /* Fin ajout */
+
+.section-title {
+  margin: 0;
+  font-size: 1.375rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 1.25rem;
+  padding: 0.313rem;
+  filter: drop-shadow(0px 0.188rem 0.938rem rgba(0, 0, 0, 0.1));
+}
+
+.card img {
+  /* permet d 'avoir un rendu d'image meilleur */
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+.card-subtitle {
+  /* ajout */
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.euro {
+  font-weight: 700;
+}
+
+.neutral-star {
+  /* donne la couleur aux etoiles "manquées" */
+  color: var(--main-bg-color);
+}
+
+/****** Hebergements And Populaires ***********/
+.hebergements-and-populaires {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hebergements,
+.populaires {
+  /* s applique aux deux sections de la div container */
+  background-color: var(--main-bg-color);
+  border-radius: 1.125rem;
+  padding: 1.875rem;
+  box-sizing: border-box;
+  margin: 2.19rem 0;
+}
+
+/****** Hebergements ***********/
+.hebergements {
+  /* reste en display block pour que la hauteur s'adapte avec le block .populaires */
+  width: 65%;
+}
+/* ***** cards de hebergements */
+.hebergements-cards {
+  /* Ajout specifique pour hebergements*/
+  display: grid; /* grid est plus facile ds ce cas */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.88rem;
+  margin: 1.88rem 0;
+}
+.hebergements-cards a {
+  /* Ajout */
+  display: flex;
+  flex-grow: 1;
+}
+.hebergements-cards .card-content {
+  /* Ajout specifique pour hebergements*/
+  padding: 0 0.94rem;
+}
+.card-subtitle-hebergements {
+  margin: 0.5rem 0;
+}
+.card-rating-hebergements {
+  /* Ajout specifique pour hebergements*/
+
+  margin-bottom: 0.94rem;
+}
+
+.card_hebergements_img {
+  /* Ajout specifique pour hebergements*/
+  height: 7.75rem;
+  width: 100%; /* attention sinon le responsive merdouille */
+  border-radius: 1.25rem 1.25rem 0 0;
+  margin-bottom: 0.25rem; /* decale le titre qui suit */
+}
+.card_grow {
+  /* Ajout */ /* permet d'etendre entierement card sur '<a>' specifique pour hebergements */
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/****** Populaires ***********/
+.populaires {
+  /* reste en display block pour que la hauteur s'adapte avec le block .hebergements
+  */
+
+  width: 33%;
+}
+
+.populaires-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.populaires-cards .card {
+  display: flex;
+  margin-top: 2.063rem;
+}
+
+.populaires-cards img {
+  width: 33%;
+  height: 8.5rem;
+  border-top-left-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+}
+
+.populaires-cards .card-content {
+  width: 67%;
+  padding-left: 0.938rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.populaires-cards .card-title {
+  margin-top: 0.625rem;
+  margin-bottom: 0.25rem;
+}
+
+.populaires-cards .card-rating {
+  margin-bottom: 0.313rem;
+}
+/* ***********Activités********* */ /* (Ajout) */
+.activities {
+  width: 100%;
+}
+.activities_content {
+  /* container de la section activities */
+  padding: 0 1.88rem;
+  margin: 2.19rem 0;
+}
+.activities_cards {
+  /* container des cards de la section activities */
+  display: flex;
+  column-gap: 1.87rem;
+  margin: 1.88rem 0;
+}
+.card_activities_img {
+  /* Ajout */
+  width: 100%; /* ne pas oublier sinon ça marche pas et ça met le bazarre */
+  height: 23.75rem;
+  border-radius: 1.25rem 1.25rem 0 0;
+  aspect-ratio: 16/9; /* ajouter pour reajuster image fort de pomegues */
+}
+.card_activities_title {
+  /* specifique aux cartes d'activities */
+  padding: 1.25rem 1.19rem;
+}
+.for_activities_card {
+  /* specifique aux cards d'activties_enleve le tour blanc */
+  padding: 0;
+}
+
+/* ****************footer*********** */
+.section_footer {
+  width: 100%;
+  background-color: var(--main-bg-color);
+  margin: auto; /* centre le cadre */
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+.a_propos,
+.nos_hebergements,
+.assistance {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.94rem;
+}
+.section_footer h3 {
+  font-size: 1.125rem;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+  .search_bar_form {
+    width: 80%;
+  }
+
+  .hebergements-and-populaires {
+    flex-direction: column;
+  }
+
+  .hebergements {
+    width: 100%;
+  }
+
+  .populaires {
+    width: 100%;
+    margin-top: 3.125rem;
+  }
+
+  .populaires-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .populaires-cards a {
+    width: 30%;
+  }
+
+  .populaires-cards .card-title {
+    font-size: 0.875rem;
+  }
+  .card_activities_img {
+    /* Ajout */
+    height: 12.5rem;
+  }
+  .filter_bar {
+    /* Ajout */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn_content {
+    margin-top: 1.25rem;
+    width: 100%;    
+  }
+  .button {
+    /* Ajout */
+    font-size: 1rem;
+  }
+}
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .main-container {
+    padding: 0;
+  }
+  header {
+    flex-direction: column;
+  }
+  .header-img {
+    display: block;
+    width: 7.6rem; /* si je ne met pas ça le logo est trop grand */
+    padding: 1.88rem;
+    margin: auto;
+  }
+  .header-active::after {
+    /* barre sur le lien actif desactivé en small size*/
+    display: none;
+  }
+  .header-active:hover {
+    position: static; /* la position relative influe sur active1 */
+  }
+  .header-nav {
+    justify-content: space-evenly;
+    position: relative; /* pour active1 en absolute */
+  }
+  .header-active1:hover::before {
+    content: "";
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 0.125rem;
+    background-color: var(--main-color);
+    bottom: -1.94rem;
+    left: 0; /* si tu mets pas ça c'est la m***** */
+  }
+  .header-active2:hover::before {
+    content: "";
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 0.125rem;
+    background-color: var(--main-color);
+    bottom: -1.94rem;
+    left: 50%; /* si tu mets pas ça c'est la m***** */
+  }
+  /* ****** info_group *******/
+  .info_group {
+    /* display: flex; */
+    /* flex-direction: column; */
+    padding: 0 1.125rem;
+    /* align-items:center ; */
+    margin: auto;
+  }
+  .info_group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .info_group-title .section-title {
+    display: block;
+    font-size: 1.25rem;
+    margin-top: 1.88rem;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+  ._block {
+    display: block;
+  }
+  /*****search bar*****/
+  .search_bar {
+    min-width: 17.5rem;
+    margin: 0 auto;
+    margin-top: 2.19rem;
+  }
+  .search_bar_form {
+    width: 100%;
+    /* margin: auto; */
+  }
+  .search_bar_form .search {
+    height: 100%; /* permet de prendre 100% du conteneur */
+    padding-left: 1.5rem;
+    padding-right: 0;
+    text-align: left;
+  }
+  .search_bar_form::before {
+    content: "";
+    display: block;
+    min-width: 3.125rem;
+    background-image: url(../images/assets/group15.svg); /* pareil attention au chemin*/
+    border-radius: 0.9375rem 0 0 0.9275rem;
+  }
+  .search_bar_form .submit {
+    /* remplacement submit */
+    display: block;
+    width: 3.125rem;
+    border-radius: 0.9375rem;
+    font-size: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-image: url(../images/assets/Vector.svg); /* pareil attention au chemin*/
+    background-repeat: no-repeat;
+    background-size: 1.0625rem 1.0625rem;
+    background-position: center;
+  }
+  /* ******filter_bar***** */ /* *Ajout* */
+  .filter_bar {
+    /* align-items: flex-start; */
+    display: block;       
+  }
+  .btn_content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    height: auto;   
+    width: auto;
+    justify-items: center;
+    
+  }
+  .filter-title {
+    width: 100%;
+    font-size: 1.125rem;
+  }
+  .button {    
+    font-size: 0.875rem;
+    height: 2.6rem;
+    width: 8.2rem;  /* corrigé */ 
+    
+  }
+  .info_bar-info {
+    /* passe à la ligne apres "disponible" */
+    display: flex;
+    flex-direction: column;
+    font-size: 0.77rem;
+  }
+  /* ***hebergements-and-populaires*** */
+  .hebergements,
+  .populaires {
+    border-radius: 0; /* none pas compris */
+  }
+  /* ***** cards de hebergements */
+  .hebergements {
+    width: 100%;
+    order: 1; /* passe la section apres populaires */
+    background-color: white;
+  }
+  .hebergements-cards {
+    grid-template-columns: 1fr;
+    row-gap: 0.94rem;
+    margin: 1.88rem 0;
+  }
+  /****** Populaires ***********/
+  .populaires {
+    width: 100%;
+  }
+  .populaires-cards {
+    display: block;
+  }
+  .populaires-cards img {
+    width: 33%;
+    height: 9.125rem;
+    border-top-left-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
+  }
+  /* ***********Activités********* */
+  .activities_cards {
+    /* flex-direction: column; */
+    display: block;
+  }
+  .card_activities_img {
+    height: 8.8125rem;
+  }
+  .for_activities_card {
+    margin: 0.94rem 0;
+  }
+  /* ****************footer*********** */
+  .section_footer {
+    flex-direction: column;
+    row-gap: 3.12rem;
+    padding: 1.88rem;
+  }
+}
