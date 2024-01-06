@@ -9,8 +9,8 @@
   --main-color: #0065fc;
   --main-bg-color: #f2f2f2;
   --filter-bg-color: #deebff;
-  --black: #000000;
-  --grey-tint-2: #d9d9d9;
+  --black: #000000;/* ajout */
+  --grey-tint-2: #d9d9d9;/* ajout */
 }
 
 .fa-solid {
@@ -318,6 +318,12 @@ a {
   column-gap: 1.87rem;
   margin: 1.88rem 0;
 }
+.activities_cards a{
+  /* permet d'etendre le lien en bas du container */
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  }
 .card_activities_img {
   /* Ajout */
   width: 100%; /* ne pas oublier sinon ça marche pas et ça met le bazarre */
